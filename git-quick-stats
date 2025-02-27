@@ -209,7 +209,9 @@ ADDITIONAL USAGE
     You can set _MENU_THEME to display the legacy color scheme
         ex: export _MENU_THEME=legacy
     You can set _GIT_BRANCH to set the branch of the stats
-        ex: export _GIT_BRANCH=master"
+        ex: export _GIT_BRANCH=master
+    You can set _JSON_PATH to set the experimental path for the output
+        ex: export _JSON_PATH=\$PWD"
 }
 
 ################################################################################
@@ -1056,7 +1058,7 @@ if [[ "$#" -eq 1 ]]; then
             done
             csvOutput "${branch}";;
         -j|--json-output)
-            json_path=""
+            json_path="${_JSON_PATH:-}"
             while [[ -z "${json_path}" ]]; do
                 echo "NOTE: This feature is in beta!"
                 echo "The file name will be saved as \"output.json\"."
