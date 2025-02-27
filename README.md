@@ -231,6 +231,13 @@ git clone https://github.com/arzzen/git-quick-stats.git && cd git-quick-stats
 sudo make install
 ```
 
+Simple installation without sudo. This method require ~/.local/bin in you PATH env:
+
+```bash
+git clone https://github.com/arzzen/git-quick-stats.git && cd git-quick-stats
+ln -sn $PWD/git-quick-stats ~/.local/bin/git-quick-stats
+```
+
 For uninstalling, open up the cloned directory and run
 
 ```bash
